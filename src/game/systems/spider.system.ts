@@ -20,6 +20,8 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
 
     const onAdd = (id: string) => {
         const sprite = getSprite(id);
+        const entity = getGame().entities.get(id);
+
         sprite.interactive = true;
         sprite.on('mousedown', () => {
             console.log('mousedown', id);
@@ -30,7 +32,6 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
         text.position.y = 100;
         sprite.addChild(text);
 
-        const entity = getGame().entities.get(id);
         entity.updateComponent(ComponentEnum.SPIDY, {
             deathMessage: 'Mr. Stark? I don\'t feel so good... I don\'t wanna go...',
             velocity: getRandomNumber(1, 50)
