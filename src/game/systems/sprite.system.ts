@@ -2,15 +2,15 @@ import {SystemFunction} from "darker-engine";
 import {SystemEnum} from "../system.enum";
 import {ComponentEnum} from "../component.enum";
 import * as PIXI from "pixi.js";
-import {app} from "../../index";
+import {app, game} from "../../index";
 
 export const spriteSystem: SystemFunction<SystemEnum, ComponentEnum> = (
     {
-        getGame
+
     }
 ) => {
     const onAdd = (id: string) => {
-        const entity = getGame().entities.get(id);
+        const entity = game.getEntity(id);
         const { texture } = entity.getComponent(ComponentEnum.SPRITE);
         const sprite = new PIXI.Sprite(PIXI.Texture.from(texture));
         sprite.name = id;

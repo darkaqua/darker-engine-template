@@ -43,4 +43,3 @@ game.setSystems(
     spiderSystem
 );
 // add pixi ticker
-app.ticker.add(game.onLoop);

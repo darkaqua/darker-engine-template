@@ -8,22 +8,22 @@ import {app, game} from "../../index";
 
 export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
     {
-        getGame,
         getEntityList
     }
 ) => {
+
     setTimeout(() => {
-        game.entities.add(spiderEntity('Spidy'));
+        game.addEntity(spiderEntity('Spidy'));
     }, 300);
 
     const getSprite = (id: string): PIXI.Sprite => app.stage.getChildByName(id) as PIXI.Sprite;
 
     const onAdd = (id: string) => {
         const sprite = getSprite(id);
-        const entity = getGame().entities.get(id);
+        const entity = game.getEntity(id);
 
         sprite.interactive = true;
-        sprite.on('mousedown', () => {
+        sprite.on('pointertap', () => {
             console.log('mousedown', id);
             entity.removeComponent(ComponentEnum.SPIDY);
         });
@@ -39,24 +39,26 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
     }
 
     const onRemove = (id: string) => {
-        const { deathMessage } = getGame().entities.get(id).getComponent(ComponentEnum.SPIDY);
+        const { deathMessage } = game.getEntity(id).getComponent(ComponentEnum.SPIDY);
         const sprite = getSprite(id);
         const spriteText = sprite.getChildAt(0) as PIXI.Text;
         spriteText.text = deathMessage;
 
         setTimeout(() => {
-            getGame().entities.get(id).removeComponent(ComponentEnum.SPRITE);
-            getGame().entities.add( spiderEntity('Spider_' + getRandomNumber(1, 9999999)) );
+            game.getEntity(id).removeComponent(ComponentEnum.SPRITE);
+            game.addEntity( spiderEntity('Spider_' + getRandomNumber(1, 9999999)) );
         }, 2000);
     }
 
     const onLoop = (delta: number) => {
         getEntityList().forEach(entityId => {
             const sprite = app.stage.getChildByName(entityId);
-            const { velocity } = getGame().entities.get(entityId).getComponent(ComponentEnum.SPIDY);
+            const { velocity } = game.getEntity(entityId).getComponent(ComponentEnum.SPIDY);
             sprite.position.x += delta * (velocity / 10);
         });
     }
+
+    app.ticker.add(onLoop);
 
     return {
         id: SystemEnum.SPIDER_SYSTEM,
@@ -65,7 +67,6 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
             ComponentEnum.MOB
         ],
         onAdd,
-        onRemove,
-        onLoop
+        onRemove
     }
 }
