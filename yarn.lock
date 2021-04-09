@@ -1114,9 +1114,9 @@ css-what@^3.2.1:
   integrity sha512-ACUm3L0/jiZTqfzRM3Hi9Q8eZqd6IK37mMWPLz9PJxkLWllYeRf+EHUSHYEtFop2Eqytaq1FizFVh7XfBnXCDQ==
 
 darker-engine@2.0.0:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/darker-engine/-/darker-engine-1.1.3.tgz#5cdeebd5b66a1476703a1c4a4a3abca0c024ab7e"
-  integrity sha512-IPLVvA/wLqmPIk2j8HJQeRcnauhzOtpj1/Px75kmf0AxXZCez6oz1FQ+rvnIBzy3f+LgpRBXn77r+E7RX1Z1lQ==
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/darker-engine/-/darker-engine-2.0.0.tgz#71c97a01ff7e7344ef60758d40777701f1b6be91"
+  integrity sha512-/MJKvnONRuJnkcKu67ns1cwUCuhqTJLypXchjOTd+LHZaReo1gmdCjM2AbQUcVI4xhv9SMsh5gTe1LxCY9xGeg==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
