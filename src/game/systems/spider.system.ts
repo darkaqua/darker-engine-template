@@ -29,6 +29,7 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
         });
 
         const text = new PIXI.Text(id);
+        text.name = 'text';
         text.position.y = 100;
         sprite.addChild(text);
 
@@ -41,11 +42,11 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
     const onRemove = (id: string) => {
         const { deathMessage } = game.getEntity(id).getComponent(ComponentEnum.SPIDY);
         const sprite = getSprite(id);
-        const spriteText = sprite.getChildAt(0) as PIXI.Text;
+        const spriteText = sprite.getChildByName('text') as PIXI.Text;
         spriteText.text = deathMessage;
 
         setTimeout(() => {
-            game.getEntity(id).removeComponent(ComponentEnum.SPRITE);
+            game.removeEntity(id);
             game.addEntity( spiderEntity('Spider_' + getRandomNumber(1, 9999999)) );
         }, 2000);
     }
