@@ -1,6 +1,5 @@
 import * as PIXI from 'pixi.js';
 import { game as darkerGame } from "darker-engine";
-import {SystemEnum} from "./game/system.enum";
 import {ComponentEnum} from "./game/component.enum";
 import {spiderSystem} from "./game/systems/spider.system";
 import {spriteSystem} from "./game/systems/sprite.system";
@@ -36,7 +35,7 @@ window.addEventListener('resize', () => {
     app.view.style.height = `${innerHeight}px`;
 });
 
-export const game = darkerGame<SystemEnum, ComponentEnum>();
+export const game = darkerGame<ComponentEnum>();
 // add systems
 game.setSystems(
     spriteSystem,

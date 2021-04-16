@@ -1,12 +1,11 @@
 import {SystemFunction} from "darker-engine";
 import * as PIXI from "pixi.js";
-import {SystemEnum} from "../system.enum";
 import {ComponentEnum} from "../component.enum";
 import {getRandomNumber} from "../../utils/number.utils";
 import {spiderEntity} from "../entities/spider.entity";
 import {app, game} from "../../index";
 
-export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
+export const spiderSystem: SystemFunction<ComponentEnum> = (
     {
         getEntityList
     }
@@ -62,7 +61,6 @@ export const spiderSystem: SystemFunction<SystemEnum, ComponentEnum> = (
     app.ticker.add(onLoop);
 
     return {
-        id: SystemEnum.SPIDER_SYSTEM,
         components: [
             ComponentEnum.SPIDY,
             ComponentEnum.MOB
