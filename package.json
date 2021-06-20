@@ -1,7 +1,7 @@
 {
   "name": "darker-engine-template",
   "description": "ecs lightweight library",
-  "version": "1.0.0",
+  "version": "2.7.10",
   "author": "darkaqua",
   "license": "MIT",
   "main": "./build/index.js",
@@ -35,7 +35,7 @@
     "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
-    "darker-engine": "2.4.1",
+    "darker-engine": "2.7.10",
     "pixi.js": "6.0.1",
     "ts-loader": "8.1.0"
   }

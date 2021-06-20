@@ -1,7 +1,7 @@
 import {EntityFunction} from "darker-engine";
 import {ComponentEnum} from "../component.enum";
 
-export const spiderEntity: EntityFunction<ComponentEnum> = (
+export const spiderEntity: EntityFunction = (
     name: string
 ) => ({
     id: name,

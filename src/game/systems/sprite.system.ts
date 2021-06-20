@@ -3,7 +3,7 @@ import {ComponentEnum} from "../component.enum";
 import * as PIXI from "pixi.js";
 import {app, game} from "../../index";
 
-export const spriteSystem: SystemFunction<ComponentEnum> = () => {
+export const spriteSystem: SystemFunction = () => {
     const onAdd = (id: string) => {
         const entity = game.getEntity(id);
         const { texture } = entity.getComponent(ComponentEnum.SPRITE);

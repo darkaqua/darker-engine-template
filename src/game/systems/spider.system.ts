@@ -5,7 +5,7 @@ import {getRandomNumber} from "../../utils/number.utils";
 import {spiderEntity} from "../entities/spider.entity";
 import {app, game} from "../../index";
 
-export const spiderSystem: SystemFunction<ComponentEnum> = (
+export const spiderSystem: SystemFunction = (
     {
         getEntityList
     }
