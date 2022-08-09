@@ -3,7 +3,6 @@ import {ConfigurationItemEnum} from "./configuration.enum";
 export const Configuration = (() => {
     
     const defaultConfiguration: Record<ConfigurationItemEnum, any> = {
-        [ConfigurationItemEnum.CLUSTER_SIZE]: 8,
         [ConfigurationItemEnum.SCALE]: 3,
         [ConfigurationItemEnum.SHOW_GAME_INFO]: true
     }
