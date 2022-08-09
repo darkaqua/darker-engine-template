@@ -61,5 +61,7 @@ typings/
 \.idea/
 
 build/
+dist/
 
 .DS_Store
+.tmp-build

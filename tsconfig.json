@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "module": "commonjs",
-    "target": "es2017",
+    "module": "ES2020",
+    "target": "ES2020",
     "esModuleInterop": true,
     "sourceMap": false,
     "noUnusedLocals": true,
-    // Loaders needs this to use the more strict mini-signal types
+    "lib": ["ES2020", "DOM"],
     "paths": {
       "mini-signals": [
         "node_modules/resource-loader/typings/mini-signals.d.ts"

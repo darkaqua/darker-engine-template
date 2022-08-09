@@ -1,0 +1,1 @@
+cp -R __binaries/sharp/. node_modules/sharp/build/Release
